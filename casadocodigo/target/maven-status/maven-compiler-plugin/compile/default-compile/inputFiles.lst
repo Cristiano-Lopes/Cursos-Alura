@@ -1,4 +1,9 @@
-C:\DEVELOPMENTKIT\WORKSPACE\casadocodigo\src\main\java\br\com\casadocodigo\loja\controllers\HomeController.java
-C:\DEVELOPMENTKIT\WORKSPACE\casadocodigo\src\main\java\br\com\casadocodigo\loja\conf\AppWebConfiguration.java
-C:\DEVELOPMENTKIT\WORKSPACE\casadocodigo\src\main\java\br\com\casadocodigo\loja\conf\ServletSpringMVC.java
-C:\DEVELOPMENTKIT\WORKSPACE\casadocodigo\src\main\java\br\com\casadocodigo\loja\controllers\ProdutosController.java
+C:\DEVELOPMENTKIT\WORKSPACE\Cursos-Alura\casadocodigo\src\main\java\br\com\casadocodigo\loja\model\Produto.java
+C:\DEVELOPMENTKIT\WORKSPACE\Cursos-Alura\casadocodigo\src\main\java\br\com\casadocodigo\loja\model\Preco.java
+C:\DEVELOPMENTKIT\WORKSPACE\Cursos-Alura\casadocodigo\src\main\java\br\com\casadocodigo\loja\model\TipoPreco.java
+C:\DEVELOPMENTKIT\WORKSPACE\Cursos-Alura\casadocodigo\src\main\java\br\com\casadocodigo\loja\conf\ServletSpringMVC.java
+C:\DEVELOPMENTKIT\WORKSPACE\Cursos-Alura\casadocodigo\src\main\java\br\com\casadocodigo\loja\conf\JPAConfiguration.java
+C:\DEVELOPMENTKIT\WORKSPACE\Cursos-Alura\casadocodigo\src\main\java\br\com\casadocodigo\loja\daos\ProdutoDAO.java
+C:\DEVELOPMENTKIT\WORKSPACE\Cursos-Alura\casadocodigo\src\main\java\br\com\casadocodigo\loja\controllers\HomeController.java
+C:\DEVELOPMENTKIT\WORKSPACE\Cursos-Alura\casadocodigo\src\main\java\br\com\casadocodigo\loja\conf\AppWebConfiguration.java
+C:\DEVELOPMENTKIT\WORKSPACE\Cursos-Alura\casadocodigo\src\main\java\br\com\casadocodigo\loja\controllers\ProdutosController.java
