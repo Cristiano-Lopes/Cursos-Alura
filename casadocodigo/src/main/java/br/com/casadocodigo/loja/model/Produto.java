@@ -1,6 +1,7 @@
 package br.com.casadocodigo.loja.model;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.ElementCollection;
@@ -19,6 +20,7 @@ public class Produto implements Serializable {
 	private String titulo;
 	private String descricao;
 	private int paginas;
+	private Calendar dataLancamento;
 	private List<Preco> precos;
 
 	@Id
@@ -53,6 +55,14 @@ public class Produto implements Serializable {
 
 	public void setPaginas(int paginas) {
 		this.paginas = paginas;
+	}
+
+	public Calendar getDataLancamento() {
+		return dataLancamento;
+	}
+
+	public void setDataLancamento(Calendar dataLancamento) {
+		this.dataLancamento = dataLancamento;
 	}
 
 	@ElementCollection
