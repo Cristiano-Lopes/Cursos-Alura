@@ -1,4 +1,4 @@
-package br.com.casadocodigo.loja.daos;
+package br.com.casadocodigoo.loja.daos;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.casadocodigo.loja.model.Produto;
+import br.com.casadocodigoo.loja.models.Produto;
 
 @Repository
 @Transactional

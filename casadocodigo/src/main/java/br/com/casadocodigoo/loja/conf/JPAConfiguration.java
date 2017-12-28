@@ -1,4 +1,4 @@
-package br.com.casadocodigo.loja.conf;
+package br.com.casadocodigoo.loja.conf;
 
 import java.util.Properties;
 
@@ -17,35 +17,31 @@ public class JPAConfiguration {
 
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-
 		LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
-
 		JpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
-
 		factoryBean.setJpaVendorAdapter(jpaVendorAdapter);
 
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUsername("root");
 		dataSource.setPassword("q1w2e3r4");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/casadocodigo");
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/casadocodigoo");
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");		
 
 		factoryBean.setDataSource(dataSource);
-
+		
 		Properties props = new Properties();
-		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+		props.setProperty("hibernate.dialect" , "org.hibernate.dialect.MySQL5Dialect");
 		props.setProperty("hibernate.show_sql", "true");
 		props.setProperty("hibernate.hbm2ddl.auto", "update");
-
 		factoryBean.setJpaProperties(props);
 
-		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.model");
+		factoryBean.setPackagesToScan("br.com.casadocodigoo.loja.models");
 
 		return factoryBean;
 	}
 
 	@Bean
-	public JpaTransactionManager transactionManager(EntityManagerFactory emf) {
-		return new JpaTransactionManager();
+	public JpaTransactionManager TransactionManager(EntityManagerFactory emf) {
+		return new JpaTransactionManager(emf);
 	}
 }

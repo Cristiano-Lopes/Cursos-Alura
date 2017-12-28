@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Livros de Java, Android, iPhone, Ruby, PHP e muito mais -
-	Casa do Código</title>
+<title>Livros de Java, iPhone, Ruby, PHP e muito mais - Casa do
+	Código</title>
 </head>
 <body>
 	<h1>Casa do Código</h1>
