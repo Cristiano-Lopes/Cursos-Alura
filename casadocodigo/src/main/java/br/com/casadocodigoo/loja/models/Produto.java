@@ -20,6 +20,7 @@ public class Produto {
 	private int paginas;
 	private Calendar dataLancamento;
 	private List<Preco> precos;
+	private String sumarioPath;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -71,6 +72,14 @@ public class Produto {
 
 	public void setPrecos(List<Preco> precos) {
 		this.precos = precos;
+	}
+
+	public String getSumarioPath() {
+		return sumarioPath;
+	}
+
+	public void setSumarioPath(String sumarioPath) {
+		this.sumarioPath = sumarioPath;
 	}
 
 	@Override
