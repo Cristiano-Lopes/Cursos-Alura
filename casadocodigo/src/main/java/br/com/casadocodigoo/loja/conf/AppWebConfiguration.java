@@ -33,6 +33,7 @@ public class AppWebConfiguration {
 	@Bean
 	public MessageSource messageSource() {
 		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+
 		messageSource.setBasename("/WEB-INF/messages");
 		messageSource.setDefaultEncoding("UTF-8");
 		messageSource.setCacheSeconds(1);
@@ -43,9 +44,9 @@ public class AppWebConfiguration {
 	@Bean
 	public FormattingConversionService mvcConversionService() {
 		DefaultFormattingConversionService conversionService = new DefaultFormattingConversionService();
-		DateFormatterRegistrar registar = new DateFormatterRegistrar();
-		registar.setFormatter(new DateFormatter("dd/MM/yyyy"));
-		registar.registerFormatters(conversionService);
+		DateFormatterRegistrar formatterRegistrar = new DateFormatterRegistrar();
+		formatterRegistrar.setFormatter(new DateFormatter("dd/MM/yyyy"));
+		formatterRegistrar.registerFormatters(conversionService);
 
 		return conversionService;
 	}

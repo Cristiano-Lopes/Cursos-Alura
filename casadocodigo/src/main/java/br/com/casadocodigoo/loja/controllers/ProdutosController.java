@@ -25,50 +25,51 @@ import br.com.casadocodigoo.loja.validation.ProdutoValidation;
 @RequestMapping("/produtos")
 public class ProdutosController {
 
-	@Autowired
-	private ProdutoDAO produtoDao;
+    @Autowired
+    private ProdutoDAO produtoDAO;
 
-	@Autowired
-	private FileSaver fileSaver;
+    @Autowired
+    private FileSaver fileSaver;
 
-	@InitBinder
-	public void initBinder(WebDataBinder binder) {
-		binder.addValidators(new ProdutoValidation());
-		;
-	}
+    @InitBinder
+    public void initBinder(WebDataBinder binder){
+        binder.addValidators(new ProdutoValidation());
+    }
 
-	@RequestMapping("/form")
-	public ModelAndView form(Produto produto) {
-		ModelAndView modelAndView = new ModelAndView("produtos/form");
-		modelAndView.addObject("tipos", TipoPreco.values());
-		TipoPreco.values();
-		return modelAndView;
-	}
+    @RequestMapping("/form")
+    public ModelAndView form(Produto produto){
+        // mando um obj do model para o view
+        ModelAndView modelAndView = new ModelAndView("produtos/form"); // indico a pagina
+        modelAndView.addObject("tipos", TipoPreco.values());
+        // mando o obj tipo preco para ser exibido pelo jsp
 
-	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView gravar(MultipartFile sumario, @Valid Produto produto, BindingResult result,
-			RedirectAttributes redirectAttributes) {
+        return modelAndView;
+    }
 
-		if (result.hasErrors()) {
-			return form(produto);
-		}
-		
-		String path = fileSaver.write("arquivos-sumario", sumario);
-		produto.setSumarioPath(path);
-		
-		
-		produtoDao.gravar(produto);
-		redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso!");
-		return new ModelAndView("redirect:produtos");
-	}
+    @RequestMapping(method=RequestMethod.POST)
+    public ModelAndView gravar(MultipartFile sumario, @Valid Produto produto, BindingResult result, 
+            RedirectAttributes redirectAttributes){
 
-	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView listar() {
-		List<Produto> produtos = produtoDao.listar();
-		ModelAndView modelAndView = new ModelAndView("produtos/lista");
-		modelAndView.addObject("produtos", produtos);
+        if(result.hasErrors()){ // se aconteceu algum erro volta para o formulario
+            return form(produto);
+        }
 
-		return modelAndView;
-	}
+        String path = fileSaver.write("arquivos-sumario", sumario);
+        produto.setSumarioPath(path);
+
+        produtoDAO.gravar(produto);
+
+        redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso !");
+
+        return new ModelAndView("redirect:/produtos"); // faço isso para nao ficar em cache e gravar novamente ao F5;
+    }
+
+    @RequestMapping(method=RequestMethod.GET)
+    public ModelAndView listar(){
+        List<Produto> produtos = produtoDAO.listar();
+        ModelAndView modelAndView = new ModelAndView("produtos/lista");
+        modelAndView.addObject("produtos", produtos);
+        return modelAndView;
+    }
 
 }
